@@ -2,7 +2,7 @@ from django.db import models
 # Create your models here.
 # Product description and corresponding prices
 class Record(models.Model): #Django will pluralize class names
-    Time_Stamp=models.DateTimeField(auto_now_add=True)
+    created_at=models.DateTimeField(auto_now_add=True)
     first_name=models.CharField(max_length=50)
     last_name=models.CharField(max_length=50)
     email=models.CharField(max_length=50)
@@ -12,6 +12,7 @@ class Record(models.Model): #Django will pluralize class names
     state=models.CharField(max_length=50)
     zipcode=models.CharField(max_length=50)
 
-    def __str__(self):
+    def __str__(self): #We want to show on the screen when accessing the records
         return(f"{self.first_name} {self.last_name}")
+
         
